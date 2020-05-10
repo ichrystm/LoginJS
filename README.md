@@ -1,5 +1,6 @@
 # LoginJS
 Este repositório contém um sistema de cadastro e login simples, desenvolvido com HTML, CSS e JavaScript.
+Hospedado em: https://ichrystm.github.io/LoginJS/
 
 # Descrição
 O LoginJS, é uma página onde você pode se cadastrar e realizar o login.
