@@ -4,23 +4,18 @@ export { loginstatus };
 export { isEmpty };
 
 
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-const button = document.getElementById("login-button");
 let loginstatus = 0;
 
 
-button.addEventListener('click', isEmpty);
-
-function login() {
-    if(email.value != "" && password.value != "" && loginstatus == 1){
+const login = () => {
+    if(getLoginInfo().email != "" && getLoginInfo().password != "" && loginstatus == 1){
         checkPassword();
     }else{
         console.log("Favor, preencher os campos de login e senha.");
     }
 }
 
-function isEmpty() {
+const isEmpty = () => {
     if(userAccounts.length != 0){
         loginstatus = 1;
         login()
@@ -30,11 +25,11 @@ function isEmpty() {
 }
 
 
-function checkPassword() {
+const checkPassword = () => {
     for (var i = 0; i < userAccounts.length;  i++) {
-        if(userAccounts[i].email == email.value){
+        if(userAccounts[i].email == getLoginInfo().email){
             let id = i;
-            if(userAccounts[id].password == password.value){
+            if(userAccounts[id].password == getLoginInfo().password){
                 loginstatus = 4;
                 showMessage();
             }else {
@@ -48,3 +43,14 @@ function checkPassword() {
     }
 }
 
+const getLoginInfo = () => {
+
+    let loginInfo = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+    }
+
+    return loginInfo;
+}
+
+document.getElementById("login-button").addEventListener('click', isEmpty);
