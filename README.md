@@ -14,6 +14,11 @@ V1.1:
 1. Adicionada função de validação de e-mail, onde o cadastro só pode ser realizado com um e-mail válido.
 2. Adicionada função de tamanho mínimo de senha (8 caracteres).
 
+V1.2:
+
+1. Realizada limpeza no código para diminuir a complexidade
+2. Sintaxe de funções atualizadas para arrow functions
+
 # Atualizações futuras
 
 Integração com banco de dados MongoDB para armazenar os usuários cadastrados.
